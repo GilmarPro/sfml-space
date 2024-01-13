@@ -22,6 +22,7 @@ Game::Game()
 
     mPlayer.setTexture(mTexture);
     mPlayer.setPosition(100.f, 100.f);
+    mPlayer.scale(.2f, .2f);
 }
 void Game::run()
 {
