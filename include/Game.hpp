@@ -1,4 +1,6 @@
+#pragma once
 #include <SFML/Graphics.hpp>
+#include "../include/TextureHolder.hpp"
 
 
 class Game
@@ -18,7 +20,7 @@ class Game
         static const sf::Time TimePerFrame;
 
         sf::RenderWindow mWindow;
-        sf::Texture mTexture;
+        TextureHolder mTextures;
         sf::Sprite mPlayer;
 
         bool mIsMovingUp;

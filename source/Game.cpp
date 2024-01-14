@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "../include/Game.hpp"
+#include "../include/TextureHolder.hpp"
 
 
 const float Game::PlayerSpeed = 500.f;
@@ -7,7 +8,7 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
 
 Game::Game()
 : mWindow(sf::VideoMode(640, 480), "SFML Application")
-, mTexture()
+, mTextures()
 , mPlayer()
 , mIsMovingUp(false)
 , mIsMovingDown(false)
@@ -15,12 +16,8 @@ Game::Game()
 , mIsMovingRight(false)
 , mSpeed(100.f)
 {
-    if (!mTexture.loadFromFile("sprites/ship1.png"))
-    {
-        // ERROR
-    }
-
-    mPlayer.setTexture(mTexture);
+    mTextures.load(Textures::Airplane, "sprites/ship1.png");
+    mPlayer.setTexture(mTextures.get(Textures::Airplane));
     mPlayer.setPosition(100.f, 100.f);
     mPlayer.scale(.2f, .2f);
 }
