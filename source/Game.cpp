@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "../include/Game.hpp"
-#include "../include/TextureHolder.hpp"
+#include "../include/ResourceHolder.hpp"
 
 
 const float Game::PlayerSpeed = 500.f;
